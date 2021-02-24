@@ -1,6 +1,7 @@
 defmodule Rocketpay.User do
   use Ecto.Schema
   import Ecto.Changeset
+  alias Rocketpay.Account
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @required_params [:name, :age, :email, :password_hash, :nickname]
@@ -12,6 +13,7 @@ defmodule Rocketpay.User do
     field :password, :string, virtual: true # não salva no banco
     field :password_hash, :string
     field :nickname, :string
+    has_one :account, Account
     timestamps()
   end
 
