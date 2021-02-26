@@ -1,5 +1,4 @@
 defmodule RocketpayWeb.AccountsView do
-
   def render("update.json", %{account: account}) do
     %{
       message: "Balance changes successfully",
